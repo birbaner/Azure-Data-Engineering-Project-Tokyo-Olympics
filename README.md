@@ -24,8 +24,8 @@ Source(Kaggle): [2021 Olympics in Tokyo](https://www.kaggle.com/datasets/arjunpr
 2. Create a Resource Group: Set up a resource group named tokyo-olympic-data to manage all resources associated with this project.
 3. Set Up Storage Account: Create a storage account within the resource group, configured specifically to use Azure Data Lake Storage (ADLS) Gen2 for efficient data management.
 4. Create Data Container and Directories: Inside the storage account, create a container to hold project data. Add two directories:
-            -raw-data for storing the raw ingested data.
-            -transformed-data for saving data after transformations.
+            - raw-data for storing the raw ingested data.
+            - transformed-data for saving data after transformations.
      
 # Data Ingestion Using Azure Data Factory
 1.Create Azure Data Factory Workspace: Set up a Data Factory workspace within the resource group.
