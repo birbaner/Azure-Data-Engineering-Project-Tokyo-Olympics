@@ -35,13 +35,13 @@ Source(Kaggle): [2021 Olympics in Tokyo](https://www.kaggle.com/datasets/arjunpr
 3.Prepare Dataset: Upload the Tokyo Olympics dataset from Kaggle to GitHub for easy access via HTTP.
 
 4.Create Data Integration Pipeline:
-     Initialize a new pipeline in Azure Data Factory Studio.
-     Use the Copy Data activity to efficiently move data between the GitHub source and ADLS Gen2 destination.
+     * Initialize a new pipeline in Azure Data Factory Studio.
+     * Use the Copy Data activity to efficiently move data between the GitHub source and ADLS Gen2 destination.
      
 5.Configure Data Source and Sink:
-      Set up the data source using the HTTP template to pull data from the GitHub repository.
-      Establish a linked service for both the source and sink.
-      Configure the file format for the ingested data.
+      * Set up the data source using the HTTP template to pull data from the GitHub repository.
+      * Establish a linked service for both the source and sink.
+      * Configure the file format for the ingested data.
       
 6.Run Data Pipelines: Repeat the above steps for all datasets (e.g., athletes.csv, medals.csv). Connect all Copy Data activities and execute them simultaneously.
 
@@ -53,14 +53,14 @@ Source(Kaggle): [2021 Olympics in Tokyo](https://www.kaggle.com/datasets/arjunpr
 2.Configure Compute Resources: Set up a cluster in Databricks to handle data processing tasks.
 
 3.Create a Notebook:
-Create and rename a new Databricks notebook to reflect its purpose (e.g., "Data Transformation").
+* Create and rename a new Databricks notebook to reflect its purpose (e.g., "Data Transformation").
      
 4.Connect Databricks to ADLS Gen2:
-  Use credentials such as Client ID, Tenant ID, and Secret to write code in the notebook for mounting ADLS Gen2 to Databricks.
+  * Use credentials such as Client ID, Tenant ID, and Secret to write code in the notebook for mounting ADLS Gen2 to Databricks.
      
 5.Perform Data Transformation:
-    Clean, preprocess, and transform the data as required.
-    Save the transformed data back into the transformed-data directory in ADLS Gen2.
+    * Clean, preprocess, and transform the data as required.
+    * Save the transformed data back into the transformed-data directory in ADLS Gen2.
 
 6.Refer to the Transformation Notebook: Refer to Tokyo Olympics Transformation.ipynb for the transformation code and steps.
 
@@ -73,8 +73,8 @@ Create and rename a new Databricks notebook to reflect its purpose (e.g., "Data 
 3.Create Tables from Transformed Data: Use the transformed data stored in ADLS Gen2 to define tables in the database.
 
 4.Perform Data Analysis:
-    Write and execute SQL scripts to perform exploratory data analysis (EDA) on the ingested datasets.
-    Identify patterns, trends, and insights from the data.
+    * Write and execute SQL scripts to perform exploratory data analysis (EDA) on the ingested datasets.
+    * Identify patterns, trends, and insights from the data.
     
 5.Visualize Data: Use Power BI to create detailed and interactive dashboards for further analysis and visualization. 
 
