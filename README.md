@@ -73,7 +73,6 @@ Create and rename a new Databricks notebook to reflect its purpose (e.g., "Data 
 3.Create Tables from Transformed Data: Use the transformed data stored in ADLS Gen2 to define tables in the database.
 
 4.Perform Data Analysis:
-
     Write and execute SQL scripts to perform exploratory data analysis (EDA) on the ingested datasets.
     Identify patterns, trends, and insights from the data.
     
