@@ -11,8 +11,11 @@ Source(Kaggle): https://www.kaggle.com/datasets/arjunprasadsarkhel/2021-olympics
 
 # Azure Services Used
  Azure Data Factory: Used as the data ingestion tool to connect to the CSV dataset hosted on GitHub, enabling automated and scheduled data pipelines for seamless data import into the Azure ecosystem.
+ 
  Azure Data Lake Storage Gen2: Serves as the primary data storage solution, providing a scalable and secure environment for storing raw and transformed data, ensuring high availability and efficient data management.
+ 
  Azure Databricks: Utilized for data transformation and enrichment tasks, leveraging its powerful Spark-based analytics engine to clean, preprocess, and transform the data into a structured format suitable for advanced analytics.
+ 
  Azure Synapse Analytics: Enables in-depth data analytics by processing the transformed data, running complex queries, and creating aggregated datasets for generating insights and supporting visualization dashboards.
 
 # Workflow
@@ -22,41 +25,67 @@ Source(Kaggle): https://www.kaggle.com/datasets/arjunprasadsarkhel/2021-olympics
 3. Set Up Storage Account: Create a storage account within the resource group, configured specifically to use Azure Data Lake Storage (ADLS) Gen2 for efficient data management.
 4. Create Data Container and Directories: Inside the storage account, create a container to hold project data. Add two directories:
              raw-data for storing the raw ingested data.
+   
              transformed-data for saving data after transformations.
 
 # Data Ingestion Using Azure Data Factory
 1.Create Azure Data Factory Workspace: Set up a Data Factory workspace within the resource group.
+
 2.Launch Data Factory Studio: Open Azure Data Factory Studio to design and manage data pipelines.
+
 3.Prepare Dataset: Upload the Tokyo Olympics dataset from Kaggle to GitHub for easy access via HTTP.
+
 4.Create Data Integration Pipeline:
      Initialize a new pipeline in Azure Data Factory Studio.
+     
      Use the Copy Data activity to efficiently move data between the GitHub source and ADLS Gen2 destination.
+     
 5.Configure Data Source and Sink:
       Set up the data source using the HTTP template to pull data from the GitHub repository.
+      
       Establish a linked service for both the source and sink.
+      
       Configure the file format for the ingested data.
+      
 6.Run Data Pipelines: Repeat the above steps for all datasets (e.g., athletes.csv, medals.csv). Connect all Copy Data activities and execute them simultaneously.
+
 7.Validate Data: After the pipeline execution, navigate to the raw-data folder in ADLS Gen2 and verify the presence of datasets.
 
 # Data Transformation Using Azure Databricks
 1.Set Up Azure Databricks Workspace: Create a Databricks workspace within the resource group and launch it.
+
 2.Configure Compute Resources: Set up a cluster in Databricks to handle data processing tasks.
+
 3.Create a Notebook:
+
      Create and rename a new Databricks notebook to reflect its purpose (e.g., "Data Transformation").
+     
 4.Connect Databricks to ADLS Gen2:
+
      Use credentials such as Client ID, Tenant ID, and Secret to write code in the notebook for mounting ADLS Gen2 to Databricks.
+     
 5.Perform Data Transformation:
+
     Clean, preprocess, and transform the data as required.
+    
     Save the transformed data back into the transformed-data directory in ADLS Gen2.
+
 6.Refer to the Transformation Notebook: Refer to Tokyo Olympics Transformation.ipynb for the transformation code and steps.
 
 # Data Analysis Using Azure Synapse Analytics
+
 1.Set Up Synapse Workspace: Create a Synapse Analytics workspace within the resource group.
+
 2.Create Lake Database: Navigate to the "Data" section, select "Lake Database," and create a new database named TokyoOlympicDB.
+
 3.Create Tables from Transformed Data: Use the transformed data stored in ADLS Gen2 to define tables in the database.
+
 4.Perform Data Analysis:
+
     Write and execute SQL scripts to perform exploratory data analysis (EDA) on the ingested datasets.
+    
     Identify patterns, trends, and insights from the data.
+    
 5.Visualize Data: Use Power BI to create detailed and interactive dashboards for further analysis and visualization. 
 
  
